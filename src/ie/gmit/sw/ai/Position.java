@@ -7,9 +7,9 @@ public class Position {
 	private Position(int x, int y) {
 		this.x = x;
 		this.y = y;
-	}// constructor
+	}
 
-	public Position getPosition(char target, char[][] table) {
+	public static Position getPosition(char target, char[][] table) {
 
 		for (int i = 0; i < 5; i++) {
 			for (int j = 0; j < 5; j++) {
