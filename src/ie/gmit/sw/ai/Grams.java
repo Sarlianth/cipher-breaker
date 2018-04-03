@@ -46,6 +46,20 @@ public class Grams {
 		}
 	}
 	
+	public double score(String cipher_string) {
+		double score = 0;
+		
+		int range = (cipher_string.length() < 400) ?  cipher_string.length() - 4 : 400 - 4;
+		
+		for(int i = 0; i < range; i++) {
+			Double frequency = (Double) grams.get(cipher_string.substring(i, i+4));
+			if(frequency != null) {
+				score +=  (frequency / getExternalCount());
+			}
+		}
+		return score;
+	}
+	
 	public int getExternalCount() {
 		return externalCount;
 	}
