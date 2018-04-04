@@ -1,15 +1,21 @@
 package ie.gmit.sw.ai;
 
+/*
+ * Adrian Sypos - G00309646
+ * Position - Class representing position on the cipher table, handy to use for moving X and Y 
+ */
+
 public class Position {
 
-	private int x, y;
-	
-	private Position(int x, int y) {
+	private int x;
+	private int y;
+
+	public Position(int x, int y) {
 		this.x = x;
 		this.y = y;
 	}
 
-	public static Position getPosition(char target, char[][] table) {
+	public static Position getPos(char target, char[][] table) {
 
 		for (int i = 0; i < 5; i++) {
 			for (int j = 0; j < 5; j++) {
@@ -20,20 +26,13 @@ public class Position {
 		}
 		return null;
 	}
-
+	
 	public int getX() {
-		return x;
+		return this.x;
 	}
-
-	public void setX(int x) {
-		this.x = x;
-	}
-
+	
 	public int getY() {
-		return y;
+		return this.y;
 	}
-
-	public void setY(int y) {
-		this.y = y;
-	}
+	
 }
