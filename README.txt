@@ -5,6 +5,11 @@ The main features;
 * User can use a key if he knows it
 * If user doesn't know the code simulated annealing will be used to break the key
 
+Please make sure that 4grams.txt is in the same directory with the *.jar file.
+
+Use the following command to run the program from CMD:
+java -cp ./playfair.jar ie.gmit.sw.ai.CipherBreaker
+
 I am using a formula to find the best optimal temperature for annealing which looks as follows:
 10 + 0.087 * (cypherText.length() - 84)
 I found that dividing the best optimal temperature by 3 gives me the best result and allows to decrypt the text faster.
