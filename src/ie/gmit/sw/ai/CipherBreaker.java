@@ -14,28 +14,6 @@ import java.util.Scanner;
 public class CipherBreaker {
 
 	public static void main(String[] args) throws Exception, Throwable {
-//		String cipherText = "HFZQLYVEDWNITIQPQDUVHYLGXZHFNYBKPACAZQHFVQIQCUUVYCBXABQZQZURHQDZHBKDMVZQHXRGURLQ"
-//				+ "HTXZQVDFYXZHRGGWHBYEGXNYYEGKYVHFLQDBWDVQIZEAUCAHHPQIBRRVBREZNYYQAHPUQDUVHYZXGNRDEOZWQFKCLZZH"
-//				+ "XVRDEOFEINQZZKZPKDYDCAMEEQUDBCLDBKPAEDUVYCHFZQQEUMSVPBUMURLQHTXZXZCUHTVTPHMDLDRGMDLDVBHCMGU"
-//				+ "VYCQVPVDMSZXQCPDIQZLQKDUBEMTCYDDBCQGDFEUKQZVPCYUHKDIA"
-//				+ "BDFVFEETGKIDOZEFURLQUVYCKDPTACYQUCFUPVVBBREZZXDTZPWCMEDILYTHZHADMUDBGQHBKIFEMDEWIZRGVQHT"
-//				+ "KCNWIEGNHCPLLUDPCOFTQGDPNWBYHCHFQZITQVGKUVYCHFBDQVHVHCHFDIYXHFBRUMLZKDZDFQFHNYLGSAPLQCCAZ"
-//				+ "QHCPCBODITCVBMUHFDIYXHFBRUMLZKDLULIDLIDDLQRKWZQACYQUZBHZBDUBHQZUKUZEDGWTVBXABQZQZBUFEUFFT"
-//				+ "QVEKZQINAHMEPTDFNYFBIZEXBRRVBREZTCILEVFBEDHUBRWDLYTHFHIZNYCPOVBDLIZQHFQPQDUVHYLGCUNYOKDMPC"
-//				+ "HTXZPCGCHFDYLQDBLTHPQEKCGKTIQIBRVQHBQNDBRXBZEFRFVUEDQYNYMZCPBDHYLKCUXF";
-//
-//		int OPTIMAL_TEMP = (int)((10 + 0.087 * (cipherText.length() - 84)));
-//		int BEST_TEMP = OPTIMAL_TEMP / 3;
-//		
-//		Playfair playfair = new Playfair();
-//		playfair.setCipherText(cipherText);
-//		
-//		long startTime = System.currentTimeMillis();
-//
-//		SimulatedAnnealing sa = new SimulatedAnnealing(BEST_TEMP, 50000, cipherText);
-//		sa.annealing();
-//		
-//		System.out.println("Execution time: " + ((System.currentTimeMillis() - startTime)/1000) + "s");	
 		
 		Scanner console = new Scanner(System.in);
 		
@@ -99,7 +77,7 @@ public class CipherBreaker {
 						long startTime = System.currentTimeMillis();
 						SimulatedAnnealing sa = new SimulatedAnnealing(BEST_TEMP, transitions, sb.toString());
 						sa.annealing(debug);
-						System.out.println("\nExecution time: " + ((System.currentTimeMillis() - startTime)/1000) + "s");	
+						System.out.println("\nExecution time: " + (System.currentTimeMillis() - (startTime)/1000) + "s");	
 						
 						System.out.println("\nIf the result is not satisfactory please try again\nTry again?: [y/n]");
 						String again = console.next();

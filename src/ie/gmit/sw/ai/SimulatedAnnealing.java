@@ -1,5 +1,6 @@
 package ie.gmit.sw.ai;
 
+import java.io.PrintWriter;
 import java.security.SecureRandom;
 import java.util.Map;
 
@@ -100,5 +101,9 @@ public class SimulatedAnnealing {
 		}
 		
 		System.out.println("\n\nKey found: " + parent + "\nDecrypted message: " + playFair.decrypt(parent));
+		//Print the result to textfile called result.txt
+		try (PrintWriter out = new PrintWriter("result.txt")) {
+		    out.println("Key found: " + parent + "\r\nDecrypted message: " + playFair.decrypt(parent));
+		}
 	}
 }
