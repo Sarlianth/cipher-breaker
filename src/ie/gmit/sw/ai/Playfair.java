@@ -36,7 +36,6 @@ public class Playfair {
 		for (int i = 0; i < 5; i++) {
 			for (int j = 0; j < 5; j++) {
 				cipher[i][j] = decryptKey.charAt(index);
-//				System.out.print(cipherTable[i][j] + " ");
 				index++;
 			}
 		}

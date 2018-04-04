@@ -31,7 +31,7 @@ public class SimulatedAnnealing {
 	}
 	
 	//Method to actually do the annealing
-	public void annealing() throws Throwable {		
+	public void annealing(boolean debug) throws Throwable {		
 		
 		//Load the 4grams
 		gramsMap = grams.loadGrams();
@@ -86,21 +86,19 @@ public class SimulatedAnnealing {
 					//Save new bescScore
 					bestScore = parentScore;
 					//String bestKey = parent;
-					System.out.printf("\nTemp: %d Transition: %d Key: %s Score: %.2f", temp, index, parent, bestScore);
-					//System.out.printf("\nBest hit at Temp: %d\nBest Score: %f0.3\tFor Key: %s\nDecrypted message: %s\n", temp, bestScore, parent, decryptedText);
+					if(debug == true) System.out.printf("\nTemp: %d Transition: %d Key: %s Score: %.2f", temp, index, parent, bestScore);
 				}
-				
 			}
 
 			//If the score is 150% better than it was at the start, print the result
 			if(bestScore > (startScore/1.5)){
-				System.out.printf("\n----------------------------------------\nHIT! Temp: %d Key: %s Score: %.2f\nDecrypted text: %s\n----------------------------------------\n", temp, parent, bestScore, playFair.decrypt(parent));
+				if(debug == true) System.out.printf("\n----------------------------------------\nHIT! Temp: %d Key: %s Score: %.2f\n----------------------------------------\n", temp, parent, bestScore);
 				//System.out.printf("\nBest hit at Temp: %d\n_________________________________\nBest Score: %f0.3\tFor Key: %s\nDecrypted message: %s\n", temp, bestScore, parent, playFair.decrypt(parent));
 				//If the score is 160% better, break the loop because it has successfully been decrypted
 				if(bestScore > (startScore/1.6)) break;
 			}
 		}
 		
-		System.out.println("Decrypted: " + playFair.decrypt(parent));
+		System.out.println("\n\nKey found: " + parent + "\nDecrypted message: " + playFair.decrypt(parent));
 	}
 }
